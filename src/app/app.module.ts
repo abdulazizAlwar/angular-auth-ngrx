@@ -1,3 +1,5 @@
+// ! https://mherman.org/blog/authentication-in-angular-with-ngrx/
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -26,7 +28,7 @@ import { reducers } from './store/app.states';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    StoreModule.forRoot(reducers, {}),
+    StoreModule.forRoot(reducers as any, {}),
     EffectsModule.forRoot([AuthEffects]),
     RouterModule.forRoot([
       { path: 'log-in', component: LogInComponent },
