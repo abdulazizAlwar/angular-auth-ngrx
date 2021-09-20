@@ -1,4 +1,5 @@
 // ! https://mherman.org/blog/authentication-in-angular-with-ngrx/
+// * Next: HTTP Interceptor and Router Gaurd
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
