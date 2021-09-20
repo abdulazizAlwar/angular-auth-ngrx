@@ -1,3 +1,4 @@
+import { GetStatus } from './../actions/auth.actions';
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 import { Router } from '@angular/router';
@@ -111,5 +112,24 @@ export class AuthEffects {
       ofType(AuthActionTypes.SIGNUP_FAILURE),
     ), { dispatch: false }
   )
+
+  GetStatus: Observable<any> = createEffect(() =>
+  this.actions.pipe(
+    ofType(AuthActionTypes.GET_STATUS),
+    map((action: GetStatus) => action),
+    switchMap(payload => {
+      return this.authService.getStatus()
+    })
+  ), { dispatch: false }
+)
+
+// GetStatus: Observable<any> = createEffect(() =>
+// this.actions.pipe(
+//   ofType(AuthActionTypes.GET_STATUS),
+//   switchMap(payload => {
+//     return this.authService.getStatus()
+//   })
+// ), { dispatch: false }
+// )
 
 }
