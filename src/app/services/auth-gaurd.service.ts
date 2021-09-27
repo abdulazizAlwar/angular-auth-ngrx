@@ -24,7 +24,6 @@ export class AuthGaurdService {
 
   }
 
-
   canActivate(): boolean {
       if (!this.auth.getToken() && !this.isAuthenticated) {
         this.router.navigateByUrl('/log-in')
